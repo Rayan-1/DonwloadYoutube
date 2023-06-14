@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.8-buster
 
 # Instala as dependências do Tkinter e do servidor X
 RUN apt-get update && apt-get install -y \
@@ -12,11 +12,13 @@ ENV DISPLAY=:0
 # Define o diretório de trabalho
 WORKDIR /app
 
-# Copia o arquivo necessário para o diretório de trabalho
-COPY youtube.py /app/youtube.py
+# Copia os arquivos necessários para o diretório de trabalho
+COPY app.py /app/app.py
+COPY templates /app/templates
+COPY neymar.jpg /app/neymar.jpg
 
 # Instala as dependências
-RUN pip install pytube
+RUN pip install pytube flask gunicorn
 
 # Define o comando de execução
-CMD ["python", "/app/youtube.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
