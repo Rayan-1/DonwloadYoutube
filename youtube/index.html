@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download de Vídeo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom right, #4c4c4c, #1a1a1a);
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .video-info {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download de Vídeo</h1>
+        <form action="/" method="post">
+            <label for="link">Link do vídeo:</label>
+            <input type="text" id="link" name="link" required><br><br>
+            <label for="path">Local para salvar:</label>
+            <input type="text" id="path" name="path" required><br><br>
+            <input type="submit" value="Baixar">
+        </form>
+        {% if title %}
+            <div class="video-info">
+                <h2>{{ title }}</h2>
+                <p>{{ views }}</p>
+                <p>{{ length }}</p>
+                <p>{{ rating }}</p>
+                {% if download_label %}
+                    <p>{{ download_label }}</p>
+                {% endif %}
+            </div>
+        {% elif error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
