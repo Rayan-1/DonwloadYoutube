@@ -7,7 +7,7 @@ gunicorn --bind 0.0.0.0:5000 app:app //para rodar em um servidor externo
 ngrok http 5000 rodar o servidor para ter acesso as info
 
 ![image](https://github.com/Rayan-1/DonwloadYoutube/assets/69490855/d105a5ac-ab3a-4a11-b0aa-563171138140)
-https://ngrok.com/blog-post/datadog-logs //para ter acesso a uma interface e ver os logs
+Web Interface   http://127.0.0.1:4040//para ter acesso a uma interface e ver os logs
 
 
 ![image](https://github.com/Rayan-1/DonwloadYoutube/assets/69490855/e4f149eb-0b2d-41dc-9c05-c57637cbe2a6)
