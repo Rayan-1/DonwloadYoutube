@@ -22,3 +22,6 @@ click em "Baixar"
 o resultado sera...
 ![image](https://github.com/Rayan-1/DonwloadYoutube/assets/69490855/d2d74f54-725b-4063-807e-a832fae94245)
 
+
+acesse no computador : http://localhost:5000   
+acesse no celular : https://daf6-187-19-149-185.ngrok-free.app       
