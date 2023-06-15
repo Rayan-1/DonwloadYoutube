@@ -10,7 +10,8 @@ ngrok http 5000 rodar o servidor para ter acesso as info
 https://ngrok.com/blog-post/datadog-logs //para ter acesso a uma interface e ver os logs
 
 
-![image](https://github.com/Rayan-1/DonwloadYoutube/assets/69490855/bc7b7bc0-56e6-434c-b6cf-8fea8bae91aa)
+![image](https://github.com/Rayan-1/DonwloadYoutube/assets/69490855/e4f149eb-0b2d-41dc-9c05-c57637cbe2a6)
+
 
 
 ao adicionar o link do video do youtube que vc deseja baixar e a pasta onde quer guardar o video
