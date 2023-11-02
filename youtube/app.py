@@ -9,6 +9,13 @@ app = Flask(__name__)
 
 HTML_FILE = "index.html"  # Define the constant for the HTML file name
 
+# Disabling CSRF protection for all routes
+@app.before_request
+def disable_csrf():
+    if request.endpoint:
+        request.endpoint = request.endpoint.replace('.', '_')
+        g.csrf_disable = True
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
