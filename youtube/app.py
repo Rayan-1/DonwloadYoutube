@@ -7,6 +7,8 @@ os.environ["DISPLAY"] = ":0.0"
 
 app = Flask(__name__)
 
+HTML_FILE = "index.html"  # Define the constant for the HTML file name
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
@@ -25,12 +27,12 @@ def index():
             ys.download(path)
             download_label = "Download completo!"
 
-            return render_template("index.html", title=title, views=views, length=length, rating=rating, download_label=download_label)
+            return render_template(HTML_FILE, title=title, views=views, length=length, rating=rating, download_label=download_label)
         except Exception as e:
             error_message = "Erro ao baixar o vídeo"
-            return render_template("index.html", error_message=error_message)
+            return render_template(HTML_FILE, error_message=error_message)
 
-    return render_template("index.html")
+    return render_template(HTML_FILE)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
