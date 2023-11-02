@@ -6,9 +6,9 @@ from flask import Flask, render_template, request
 os.environ["DISPLAY"] = ":0.0"
 
 app = Flask(__name__)
-app.config['WTF_CSRF_ENABLED'] = True  # Ativa a proteção CSRF
+app.config['WTF_CSRF_ENABLED'] = True  # Ensure CSRF protection is enabled
 
-HTML_FILE = "index.html"  # Define a constante para o nome do arquivo HTML
+HTML_FILE = "index.html"  # Define a constant for the HTML file name
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -29,7 +29,7 @@ def index():
             download_label = "Download completo!"
 
             return render_template(HTML_FILE, title=title, views=views, length=length, rating=rating, download_label=download_label)
-        except Exception as e:
+        except Exception:
             error_message = "Erro ao baixar o vídeo"
             return render_template(HTML_FILE, error_message=error_message)
 
