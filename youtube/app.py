@@ -6,15 +6,9 @@ from flask import Flask, render_template, request
 os.environ["DISPLAY"] = ":0.0"
 
 app = Flask(__name__)
+app.config['WTF_CSRF_ENABLED'] = True  # Ativa a proteção CSRF
 
-HTML_FILE = "index.html"  # Define the constant for the HTML file name
-
-# Disabling CSRF protection for all routes
-@app.before_request
-def disable_csrf():
-    if request.endpoint:
-        request.endpoint = request.endpoint.replace('.', '_')
-        g.csrf_disable = True
+HTML_FILE = "index.html"  # Define a constante para o nome do arquivo HTML
 
 @app.route("/", methods=["GET", "POST"])
 def index():
